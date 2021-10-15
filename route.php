@@ -58,6 +58,12 @@
         case 'login':
             $loginController->login();
             break;
+        case 'logout':
+            $loginController->logout();
+            break;
+        case 'logging':
+            $loginController->verifyLogin();
+            break;
         default: 
             echo('404 Page not found'); 
             break;

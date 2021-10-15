@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.40, created on 2021-10-14 07:03:54
-  from 'C:\xampp\htdocs\pcmarket SMARTY\templates\login.tpl' */
+/* Smarty version 3.1.40, created on 2021-10-15 03:18:37
+  from 'C:\xampp\htdocs\Repo\TpEspecialWeb2\templates\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.40',
-  'unifunc' => 'content_6167ba3a7f5018_46656360',
+  'unifunc' => 'content_6168d6ed0078e3_51497670',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '0a3ea05db033065cd5ce78bb2c3d6f2dc4d78e5a' => 
+    '9858470207e5020c2f6dbce56ef0787d2c89a2b5' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\pcmarket SMARTY\\templates\\login.tpl',
-      1 => 1634187643,
+      0 => 'C:\\xampp\\htdocs\\Repo\\TpEspecialWeb2\\templates\\login.tpl',
+      1 => 1634240943,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6167ba3a7f5018_46656360 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6168d6ed0078e3_51497670 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
             <html lang="en">
             <head>
@@ -43,14 +43,14 @@ function content_6167ba3a7f5018_46656360 (Smarty_Internal_Template $_smarty_tpl)
                                 <img src="images/logo.png" width="100" alt="">
                             </div>
                             <h3 class="fw-bold text-center py-5">Bienvenido!</h3>
-                            <form action="#">
+                            <form action="logging" method="POST">
                                 <div class="mb-4">
                                     <label for="email" class="form-label">Email:</label>
                                     <input type="email" class="form-control" name="email" required>
                                 </div>
                                 <div class="mb-4">
                                     <label for="password" class="form-label">Password:</label>
-                                    <input type="password" class="form-control" required>
+                                    <input type="password" class="form-control" name="password" required>
                                 </div>
                                 <div class="d-grid">
                                     <button type="submit" class="btn btn-primary">Iniciar Sesión</button>

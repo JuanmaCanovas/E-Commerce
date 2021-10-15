@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.40, created on 2021-10-14 05:52:38
-  from 'C:\xampp\htdocs\pcmarket SMARTY\templates\editarProducto.tpl' */
+/* Smarty version 3.1.40, created on 2021-10-15 03:47:46
+  from 'C:\xampp\htdocs\Repo\TpEspecialWeb2\templates\editarProducto.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.40',
-  'unifunc' => 'content_6167a986da1797_77099863',
+  'unifunc' => 'content_6168ddc208e749_06849183',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'ba6cb26badc33bc0577a5da5453ce212e17deb0a' => 
+    'b19a0ac72b4fd3750ded807db4147b8cfc88d707' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\pcmarket SMARTY\\templates\\editarProducto.tpl',
-      1 => 1634183535,
+      0 => 'C:\\xampp\\htdocs\\Repo\\TpEspecialWeb2\\templates\\editarProducto.tpl',
+      1 => 1634260821,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_6167a986da1797_77099863 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6168ddc208e749_06849183 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <body>
@@ -42,12 +42,20 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
         <div class="col-md-6">
           <label  class="form-label text-white">Categoria</label>
           <select class="form-select" name="categoria" required>
-            <option value="cpu">CPU</option>
-            <option value="gpu">GPU</option>
-            <option value="motherboard">Motherboards</option>
-            <option value="ram">Memorias RAM</option>
-            <option value="fuente">Fuentes</option>
-            <option value="gabinete">Gabinetes</option>
+          <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['categories']->value, 'category');
+$_smarty_tpl->tpl_vars['category']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['category']->value) {
+$_smarty_tpl->tpl_vars['category']->do_else = false;
+?>
+            <option value="<?php echo $_smarty_tpl->tpl_vars['category']->value['categoria'];?>
+"><?php echo $_smarty_tpl->tpl_vars['category']->value['categoria'];?>
+</option>
+          <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+            
+            
           </select>
         </div>
         <div class="col-md-6">
@@ -60,5 +68,14 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
     </form>
 </div>
 </body>
+</html>
+
+<?php echo '<script'; ?>
+ src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"><?php echo '</script'; ?>
+>
+            <?php echo '<script'; ?>
+ src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"><?php echo '</script'; ?>
+>
+    </body>
 </html><?php }
 }

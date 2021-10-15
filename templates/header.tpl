@@ -34,7 +34,7 @@
                         <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
                         {foreach from=$categories item=category}
                             <li>
-                                <a class="dropdown-item" href="filter/{$category['categoria']}">{$category['categoria']}<a href="deleteCategory/{$category['categoria']}"><i class="bi bi-x-circle-fill text-danger"></i></a><a href="editCategory/{$category['categoria']}"><i class="bi bi-pencil-square text-warning"></i></a></a>
+                                <a class="dropdown-item" href="filter/{$category['categoria']}">{$category['categoria']}{if $isLogged}<a href="deleteCategory/{$category['categoria']}"><i class="bi bi-x-circle-fill text-danger"></i></a><a href="editCategory/{$category['id_categoria']}"><i class="bi bi-pencil-square text-warning"></i>{/if}</a></a>
                             </li>
                             <li>
                                 <hr class="dropdown-divider">
@@ -42,9 +42,19 @@
                         {/foreach}
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="login">Login</a>
+                    {if $isLogged}
+                        <li class="nav-item">
+                        <a class="nav-link" href="logout">Logout</a>
                         </li>
+      
+                    {else }
+                        <li class="nav-item">
+                            <a class="nav-link" href="login">Login</a>
+                            </li>
+
+                    {/if}
+                    
+                    
                    </ul>
             </div>
         </div>

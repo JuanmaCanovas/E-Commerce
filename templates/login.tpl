@@ -20,14 +20,14 @@
                                 <img src="images/logo.png" width="100" alt="">
                             </div>
                             <h3 class="fw-bold text-center py-5">Bienvenido!</h3>
-                            <form action="#">
+                            <form action="logging" method="POST">
                                 <div class="mb-4">
                                     <label for="email" class="form-label">Email:</label>
                                     <input type="email" class="form-control" name="email" required>
                                 </div>
                                 <div class="mb-4">
                                     <label for="password" class="form-label">Password:</label>
-                                    <input type="password" class="form-control" required>
+                                    <input type="password" class="form-control" name="password" required>
                                 </div>
                                 <div class="d-grid">
                                     <button type="submit" class="btn btn-primary">Iniciar Sesión</button>

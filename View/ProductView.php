@@ -2,28 +2,34 @@
     require_once "libs/smarty/libs/Smarty.class.php";
     class ProductView {
       
-      function home($products, $categories){
+      function home($products, $categories,$isLogged=false){
         $smarty = new Smarty();
         $smarty->assign('products',$products);
+        $smarty->assign('isLogged',$isLogged);
         $smarty->assign('categories',$categories);
         $smarty->display('templates/home.tpl');
      }
      
-     function editarProducto($id_product){
+     function editarProducto($id_product,$categories,$isLogged=false){
          $smarty= new Smarty();
          $smarty->assign('id_product',$id_product);
+         $smarty->assign('isLogged',$isLogged);
+         $smarty->assign('categories',$categories);
          $smarty->display('templates/editarProducto.tpl');
      }
      
-     function editarCategoria($categoria){
+     function editarCategoria($id_categoria,$categories,$isLogged=false){
        $smarty = new Smarty();
-       $smarty->assign('categoria',$categoria);
+       $smarty->assign('categories',$categories);
+       $smarty->assign('id_categoria',$id_categoria);
+       $smarty->assign('isLogged',$isLogged);
        $smarty->display('templates/editarCategoria.tpl');
      }
 
-     function viewDetail($producto){
+     function viewDetail($producto,$isLogged=false){
        $smarty = new Smarty();
        $smarty->assign('producto',$producto);
+       $smarty->assign('isLogged',$isLogged); 
        $smarty->display('templates/detalle.tpl');
       }
     }

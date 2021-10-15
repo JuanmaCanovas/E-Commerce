@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.40, created on 2021-10-14 08:17:50
-  from 'C:\xampp\htdocs\pcmarket SMARTY\templates\producto.tpl' */
+/* Smarty version 3.1.40, created on 2021-10-15 02:46:14
+  from 'C:\xampp\htdocs\Repo\TpEspecialWeb2\templates\producto.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.40',
-  'unifunc' => 'content_6167cb8e4abbd5_02771624',
+  'unifunc' => 'content_6168cf56b5ff44_66259119',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '1a0bb61748267be437d21879b11eab105542ec78' => 
+    '384a7d849435f300c1226dc25578edabc94fc7bb' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\pcmarket SMARTY\\templates\\producto.tpl',
-      1 => 1634191324,
+      0 => 'C:\\xampp\\htdocs\\Repo\\TpEspecialWeb2\\templates\\producto.tpl',
+      1 => 1634258515,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6167cb8e4abbd5_02771624 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6168cf56b5ff44_66259119 (Smarty_Internal_Template $_smarty_tpl) {
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['products']->value, 'product');
 $_smarty_tpl->tpl_vars['product']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['product']->value) {
@@ -36,14 +36,16 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
 </h5>
                     <h5 class="card-title">$<?php echo $_smarty_tpl->tpl_vars['product']->value['precio'];?>
 </h5>
-                    <h6 class="card-title text-info">Categoria: <?php echo $_smarty_tpl->tpl_vars['product']->value['categoria'];?>
+                    <h6 class="card-title text-info">Categoria: <?php echo $_smarty_tpl->tpl_vars['product']->value['id_categoria'];?>
 </h6>
                     <a href="viewProduct/<?php echo $_smarty_tpl->tpl_vars['product']->value['id_product'];?>
 " class="btn btn-primary">Ver Detalle</a>
+                    <?php if ($_smarty_tpl->tpl_vars['isLogged']->value) {?>
                     <a href="deleteProduct/<?php echo $_smarty_tpl->tpl_vars['product']->value['id_product'];?>
 " class="btn btn-danger">Borrar</a>         
                     <a href="editProduct/<?php echo $_smarty_tpl->tpl_vars['product']->value['id_product'];?>
 " class="btn btn-warning text-white">Editar</a>    
+                    <?php }?>
                 </div>
         </div>
     </div>

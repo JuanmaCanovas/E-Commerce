@@ -1,8 +1,6 @@
         {include file="header.tpl"}
     
     <body>
-    
-
             <div class="container">
                 <div class="row">
                 {include file="producto.tpl"}

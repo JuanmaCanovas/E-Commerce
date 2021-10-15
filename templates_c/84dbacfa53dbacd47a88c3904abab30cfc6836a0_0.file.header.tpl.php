@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.40, created on 2021-10-14 06:38:23
-  from 'C:\xampp\htdocs\pcmarket SMARTY\templates\header.tpl' */
+/* Smarty version 3.1.40, created on 2021-10-15 03:30:21
+  from 'C:\xampp\htdocs\Repo\TpEspecialWeb2\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.40',
-  'unifunc' => 'content_6167b43f7148b9_08091033',
+  'unifunc' => 'content_6168d9add4e412_76248869',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'ff2b6592b4e98f6f0243c9d2e93d0c1b38edb2ea' => 
+    '84dbacfa53dbacd47a88c3904abab30cfc6836a0' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\pcmarket SMARTY\\templates\\header.tpl',
-      1 => 1634186286,
+      0 => 'C:\\xampp\\htdocs\\Repo\\TpEspecialWeb2\\templates\\header.tpl',
+      1 => 1634261420,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6167b43f7148b9_08091033 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6168d9add4e412_76248869 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
         <html lang="en">
         <head>
@@ -64,10 +64,10 @@ $_smarty_tpl->tpl_vars['category']->do_else = false;
 ?>
                             <li>
                                 <a class="dropdown-item" href="filter/<?php echo $_smarty_tpl->tpl_vars['category']->value['categoria'];?>
-"><?php echo $_smarty_tpl->tpl_vars['category']->value['categoria'];?>
-<a href="deleteCategory/<?php echo $_smarty_tpl->tpl_vars['category']->value['categoria'];?>
-"><i class="bi bi-x-circle-fill text-danger"></i></a><a href="editCategory/<?php echo $_smarty_tpl->tpl_vars['category']->value['categoria'];?>
-"><i class="bi bi-pencil-square text-warning"></i></a></a>
+"><?php echo $_smarty_tpl->tpl_vars['category']->value['categoria'];
+if ($_smarty_tpl->tpl_vars['isLogged']->value) {?><a href="deleteCategory/<?php echo $_smarty_tpl->tpl_vars['category']->value['categoria'];?>
+"><i class="bi bi-x-circle-fill text-danger"></i></a><a href="editCategory/<?php echo $_smarty_tpl->tpl_vars['category']->value['id_categoria'];?>
+"><i class="bi bi-pencil-square text-warning"></i><?php }?></a></a>
                             </li>
                             <li>
                                 <hr class="dropdown-divider">
@@ -77,9 +77,19 @@ $_smarty_tpl->tpl_vars['category']->do_else = false;
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="login">Login</a>
+                    <?php if ($_smarty_tpl->tpl_vars['isLogged']->value) {?>
+                        <li class="nav-item">
+                        <a class="nav-link" href="logout">Logout</a>
                         </li>
+      
+                    <?php } else { ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login">Login</a>
+                            </li>
+
+                    <?php }?>
+                    
+                    
                    </ul>
             </div>
         </div>

@@ -1,4 +1,27 @@
-{if $isLogged}
+<?php
+/* Smarty version 3.1.40, created on 2021-10-15 02:01:33
+  from 'C:\xampp\htdocs\Repo\TpEspecialWeb2\templates\form.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.40',
+  'unifunc' => 'content_6168c4dd8cbc53_29759505',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '2c6131be00578f8ab3d36965c629d6338f672c0b' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\Repo\\TpEspecialWeb2\\templates\\form.tpl',
+      1 => 1634253895,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_6168c4dd8cbc53_29759505 (Smarty_Internal_Template $_smarty_tpl) {
+if ($_smarty_tpl->tpl_vars['isLogged']->value) {?>
   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Agregar producto</button>
   <button type="button" class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#exampleModal2" data-bs-whatever="@mdo">Agregar categoria</button>
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -26,9 +49,18 @@
                     <label  class="form-label text-white">Categoria</label>
                     <select class="form-select" name="categoria" required>
                       
-                      {foreach from=$categories item=category}
-                          <option value="{$category['categoria']}">{$category['categoria']}</option>
-                      {/foreach}
+                      <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['categories']->value, 'category');
+$_smarty_tpl->tpl_vars['category']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['category']->value) {
+$_smarty_tpl->tpl_vars['category']->do_else = false;
+?>
+                          <option value="<?php echo $_smarty_tpl->tpl_vars['category']->value['categoria'];?>
+"><?php echo $_smarty_tpl->tpl_vars['category']->value['categoria'];?>
+</option>
+                      <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     </select>
                   </div>
                   <div class="col-md-6">
@@ -67,4 +99,6 @@
       </div>
     </div>
   </div>
-{/if}
+<?php }
+}
+}

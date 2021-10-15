@@ -9,7 +9,7 @@
             <div class="container">
             <img src="images/default_image.jpg" class="card-img-top w-50" alt="...">
             </div>
-            <h5 class="card-title">{$producto['categoria']} {$producto['nombre']}</h5>
+            <h5 class="card-title">{$producto['id_categoria']} {$producto['nombre']}</h5>
             <p class="card-text">Marca: {$producto['marca']}</p>
             <p class="card-text">Modelo: {$producto['modelo']}</p>
             <p class="card-text">Precio: ${$producto['precio']}</p>
