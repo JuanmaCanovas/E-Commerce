@@ -18,7 +18,7 @@
 
            $products = $this->model->getProducts();
            for ($i=0; $i < count($products); $i++) { 
-            $products[$i]['id_categoria'] = $this->model->get_category($products[$i]['id_categoria']);
+            $products[$i]['id_categoria'] = $this->model->getCategoryName($products[$i]['id_categoria']);
             }
            $categories = $this->model->getCategory();
            session_start();
@@ -48,7 +48,7 @@
 
        function showProduct($id){
            $producto = $this->model->getProduct($id);
-           $producto['id_categoria'] = $this->model->get_category($producto['id_categoria']);
+           $producto['id_categoria'] = $this->model->getCategoryName($producto['id_categoria']);
            session_start();
            if(isset($_SESSION['usuario'])){
             $this->view->viewDetail($producto,$is_logged=$_SESSION['logged']);
@@ -62,7 +62,7 @@
            $id_categoria = $this->model->getIdByName($categoria);
            $productos = $this->model->getProductByCategory($id_categoria);
            for ($i=0; $i < count($productos); $i++) { 
-            $productos[$i]['id_categoria'] = $this->model->get_category($productos[$i]['id_categoria']);
+            $productos[$i]['id_categoria'] = $this->model->getCategoryName($productos[$i]['id_categoria']);
             }
            $categories = $this->model->getCategory();
            session_start();
@@ -97,36 +97,6 @@
         $id_product = $_POST['id_product'];
         $this->model->updateProduct($nombre, $marca, $modelo, $id_categoria, $precio,$id_product);
         header(home);
-        }
-
-        function createCategory(){
-            $this->model->insertCategory($_POST['categoria']);
-            header(home);
-        }
-
-        function deleteCategory($id){
-            $this->model->deleteCategoryDB($id);
-            header(home);
-        }
-
-        function viewEditCategory($id){
-            $categories = $this->model->getCategory();
-            session_start();
-
-            if(isset($_SESSION['usuario'])){
-                $this->view->editarCategoria($id,$categories,$is_logged=$_SESSION['logged']);
-            }else{
-                $this->view->editarCategoria($id,$categories);
-                 
-            }
-            
-        }
-
-        function updateCategory(){
-            var_dump($_POST['categoria']);
-            var_dump($_POST['id_categoria']);
-            $this->model->updateCategory($_POST['categoria'],$_POST['id_categoria']);
-            header(home);
         }
 
     }

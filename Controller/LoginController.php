@@ -32,7 +32,8 @@
                    
                     
                 }else{
-                    echo 'Pifiaste manco';
+                    $this->view->showLogin();
+                    echo '<h3 class="text-danger text-center">Email o password erroneos, verifique sus datos y vuelva a intentar.</h3>';
                 }
 
 

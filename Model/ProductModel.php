@@ -13,7 +13,7 @@
             return $productos;
         } //Obtiene todos los productos de la bbdd
 
-        function get_category($id_product){
+        function getCategoryName($id_product){
             $sentencia = $this->db->prepare("SELECT categoria FROM categorias WHERE id_categoria=?");
             $sentencia->execute(array($id_product));
             $category = $sentencia->fetch(PDO::FETCH_ASSOC);
@@ -72,19 +72,4 @@
             return $categories;
         }
 
-        function insertCategory($categoria){
-            $sentencia = $this->db->prepare(
-                "INSERT INTO categorias(categoria) VALUES(?)");
-            $sentencia->execute(array($categoria));
-        }
-
-        function deleteCategoryDB($id){
-            $sentencia = $this->db->prepare("DELETE FROM categorias WHERE categoria=?");
-            $sentencia->execute(array($id));
-        }
-        function updateCategory($categoria,$id_categoria){
-            $sentencia = $this->db->prepare(
-                "UPDATE categorias SET categoria='$categoria' WHERE id_categoria=?");
-            $sentencia->execute(array($id_categoria));
-            }
     }

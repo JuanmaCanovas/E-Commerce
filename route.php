@@ -1,5 +1,6 @@
 <?php
     require_once "Controller/ProductController.php";
+    require_once "Controller/CategoryController.php";
     require_once "Controller/LoginController.php";
 
     define('BASE_URL' , '//' . $_SERVER['SERVER_NAME'] . ':' .$_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/' );
@@ -13,7 +14,9 @@
     }
 
     $productController = new ProductContoller();
+    $categoryController = new CategoryController();
     $loginController = new LoginController();
+
 
     $params = explode('/', $action);
     
@@ -26,7 +29,7 @@
             $productController->createProduct();
             break;
         case 'createCategory':
-            $productController->createCategory();
+            $categoryController->createCategory(); //Done
             break;
         case 'updateProduct':
             $productController->updateProduct();
@@ -35,16 +38,16 @@
             $productController->viewEditProduct($params[1]);
             break;
         case 'updateCategory':
-            $productController->updateCategory();
+            $categoryController->updateCategory(); //Done
             break;
         case 'editCategory':
-            $productController->viewEditCategory($params[1]);
+            $categoryController->viewEditCategory($params[1]); //Done
             break;
         case 'deleteProduct':
             $productController->deleteProduct($params[1]);
             break;
         case 'deleteCategory':
-            $productController->deleteCategory($params[1]);
+            $categoryController->deleteCategory($params[1]); //Done
             break;
         case 'viewProduct':
             $productController->showProduct($params[1]);
@@ -57,6 +60,8 @@
             break;
         case 'login':
             $loginController->login();
+            session_start();
+            session_destroy();
             break;
         case 'logout':
             $loginController->logout();
