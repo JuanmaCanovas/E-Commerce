@@ -1,8 +1,9 @@
 <?php
     require_once "./Model/ProductModel.php";
+    require_once "./Model/CommentModel.php";
+    require_once "./Model/LoginModel.php";
     require_once "./View/ProductView.php";
     require_once "./View/LoginView.php";
-    require_once "./Model/LoginModel.php";
     require_once "./Controller/LoginController.php";
     class ProductContoller {
 
@@ -13,6 +14,9 @@
             $this->model = new ProductModel;
             $this->view = new ProductView;
             $this->login = new LoginController;
+            $this->loginModel = new LoginModel;
+            $this->commentModel = new CommentModel;
+
        }
        function showHome(){
 
@@ -23,7 +27,7 @@
            $categories = $this->model->getCategory();
            session_start();
            if(isset($_SESSION['usuario'])){
-               $this->view->home($products, $categories,$is_logged=$_SESSION['logged']);
+               $this->view->home($products, $categories,$is_logged=$_SESSION['logged'],$is_admin=$_SESSION['isAdmin']);
            }else{
                 $this->view->home($products, $categories);
            }
@@ -49,9 +53,11 @@
        function showProduct($id){
            $producto = $this->model->getProduct($id);
            $producto['id_categoria'] = $this->model->getCategoryName($producto['id_categoria']);
+           $comments = $this->commentModel->getCommentsDB($id);
+           $usuarios = $this->loginModel->getUsers();
            session_start();
            if(isset($_SESSION['usuario'])){
-            $this->view->viewDetail($producto,$is_logged=$_SESSION['logged']);
+            $this->view->viewDetail($producto,$usuarios,$comments,$is_admin=$_SESSION['isAdmin'],$is_logged=$_SESSION['logged'],$usuario=$_SESSION['usuario'],$idUsuario=$_SESSION['id_usuario']);
            }else{
                $this->view->viewDetail($producto);
                 
@@ -67,7 +73,7 @@
            $categories = $this->model->getCategory();
            session_start();
            if(isset($_SESSION['usuario'])){
-            $this->view->home($productos,$categories,$is_logged=$_SESSION['logged']);
+            $this->view->home($productos,$categories,$is_logged=$_SESSION['logged'],$is_admin=$_SESSION['isAdmin']);
 
            }else{
             $this->view->home($productos,$categories);
@@ -80,12 +86,11 @@
         $categories = $this->model->getCategory();
         session_start();
            if(isset($_SESSION['usuario'])){
-                $this->view->editarProducto($id,$categories,$is_logged=$_SESSION['logged']);
+                $this->view->editarProducto($id,$categories,$is_logged=$_SESSION['logged'],$is_admin=$_SESSION['isAdmin']);
            }else{
                 $this->view->editarProducto($id,$categories);
                 
            }
-        
        }
 
        function updateProduct(){

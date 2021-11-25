@@ -1,7 +1,7 @@
 {include file="header.tpl"}
-
-    <div class="container-fluid">
-        <div class="card text-center w-50 shadow position-absolute top-50 start-50 translate-middle">
+<div id="producto">
+    <div class="container p-5">
+        <div class="card text-center d-flex shadow mt-5">
             <div class="card-header">
                 Detalle del producto
             </div>
@@ -17,5 +17,16 @@
             </div>
         </div>
     </div>
+</div>
+    <div class="container_form container">
+        <div class="form-group text-left">
+        <label for="exampleFormControlTextarea1">Que te parecio la noticia</label>
+        <input type="text" class="form-control" id="exampleFormControlTextarea1" rows="3" name="comentario">
+        {include file="addcomentario.tpl"}
+        
+        </div>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 {include file="footer.tpl"}

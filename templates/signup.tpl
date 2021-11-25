@@ -19,8 +19,8 @@
                             <div class="text-end logo">
                                 <img src="images/logo.png" width="100" alt="">
                             </div>
-                            <h3 class="fw-bold text-center py-5">Bienvenido!</h3>
-                            <form action="logging" method="POST">
+                            <h3 class="fw-bold text-center py-5">Cree su usuario</h3>
+                            <form action="sendSignUp" method="POST">
                                 <div class="mb-4">
                                     <label for="email" class="form-label">Email:</label>
                                     <input type="email" class="form-control" name="email" required>
@@ -30,11 +30,7 @@
                                     <input type="password" class="form-control" name="password" required>
                                 </div>
                                 <div class="d-grid">
-                                    <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
-                                </div>
-                                <div class="py-4 text-center">
-                                    <p class="fw-bold">O</p>
-                                    <a href="home">Continuar como invitado</a>/<a href="signUp">Registrarse</a>
+                                    <button type="submit" class="btn btn-primary">Registrarse</button>
                                 </div>
                             </form>
                         </div>

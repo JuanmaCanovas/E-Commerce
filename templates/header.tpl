@@ -10,6 +10,7 @@
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
             <title>PcMARKET</title>
 </head>
+<body>
 
 <nav class="navbar navbar-dark bg-dark">
             <div class="container-fluid">
@@ -34,7 +35,7 @@
                         <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
                         {foreach from=$categories item=category}
                             <li>
-                                <a class="dropdown-item" href="filter/{$category['categoria']}">{$category['categoria']}{if $isLogged}<a href="deleteCategory/{$category['categoria']}"><i class="bi bi-x-circle-fill text-danger"></i></a><a href="editCategory/{$category['id_categoria']}"><i class="bi bi-pencil-square text-warning"></i>{/if}</a></a>
+                                <a class="dropdown-item" href="filter/{$category['categoria']}">{$category['categoria']}{if $isAdmin}<a href="deleteCategory/{$category['categoria']}"><i class="bi bi-x-circle-fill text-danger"></i></a><a href="editCategory/{$category['id_categoria']}"><i class="bi bi-pencil-square text-warning"></i>{/if}</a></a>
                             </li>
                             <li>
                                 <hr class="dropdown-divider">
@@ -42,6 +43,11 @@
                         {/foreach}
                         </ul>
                     </li>
+                    {if $isAdmin}
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-panel">Administracion de usuarios</a>
+                    </li>
+                    {/if}
                     {if $isLogged}
                         <li class="nav-item">
                         <a class="nav-link" href="logout">Logout</a>

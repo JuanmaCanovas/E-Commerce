@@ -1,33 +1,34 @@
 <?php
-/* Smarty version 3.1.40, created on 2021-10-15 02:39:08
+/* Smarty version 3.1.40, created on 2021-11-25 03:33:21
   from 'C:\xampp\htdocs\Repo\TpEspecialWeb2\templates\detalle.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.40',
-  'unifunc' => 'content_6168cdacb9e8c8_40166788',
+  'unifunc' => 'content_619ef5f13f2155_48375407',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9e40f42be2765791c6570f11a3092f58805de922' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Repo\\TpEspecialWeb2\\templates\\detalle.tpl',
-      1 => 1634258348,
+      1 => 1637807589,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:header.tpl' => 1,
+    'file:addcomentario.tpl' => 1,
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6168cdacb9e8c8_40166788 (Smarty_Internal_Template $_smarty_tpl) {
+function content_619ef5f13f2155_48375407 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-
-    <div class="container-fluid">
-        <div class="card text-center w-50 shadow position-absolute top-50 start-50 translate-middle">
+<div id="producto">
+    <div class="container p-5">
+        <div class="card text-center d-flex shadow mt-5">
             <div class="card-header">
                 Detalle del producto
             </div>
@@ -48,6 +49,20 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
             </div>
         </div>
     </div>
+</div>
+    <div class="container_form container">
+        <div class="form-group text-left">
+        <label for="exampleFormControlTextarea1">Que te parecio la noticia</label>
+        <input type="text" class="form-control" id="exampleFormControlTextarea1" rows="3" name="comentario">
+        <?php $_smarty_tpl->_subTemplateRender("file:addcomentario.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+        
+        </div>
+    </div>
+
+<?php echo '<script'; ?>
+ src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"><?php echo '</script'; ?>
+>
 
 <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 }

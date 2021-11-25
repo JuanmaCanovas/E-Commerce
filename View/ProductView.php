@@ -2,26 +2,33 @@
     require_once "libs/smarty/libs/Smarty.class.php";
     class ProductView {
       
-      function home($products, $categories,$isLogged=false){
+      function home($products, $categories,$isLogged=false,$isAdmin=false){
         $smarty = new Smarty();
         $smarty->assign('products',$products);
         $smarty->assign('isLogged',$isLogged);
+        $smarty->assign('isAdmin',$isAdmin);
         $smarty->assign('categories',$categories);
         $smarty->display('templates/home.tpl');
      }
      
-     function editarProducto($id_product,$categories,$isLogged=false){
+     function editarProducto($id_product,$categories,$isLogged=false,$isAdmin=false){
          $smarty= new Smarty();
          $smarty->assign('id_product',$id_product);
          $smarty->assign('isLogged',$isLogged);
+         $smarty->assign('isAdmin',$isAdmin);
          $smarty->assign('categories',$categories);
          $smarty->display('templates/editarProducto.tpl');
      }
     
-     function viewDetail($producto,$isLogged=false){
+     function viewDetail($producto,$usuarios,$comentarios,$isAdmin=false,$isLogged=false,$usuario='',$idUsuario=''){
        $smarty = new Smarty();
        $smarty->assign('producto',$producto);
-       $smarty->assign('isLogged',$isLogged); 
+       $smarty->assign('usuarios',$usuarios);
+       $smarty->assign('comentarios',$comentarios);
+       $smarty->assign('usuario',$usuario);
+       $smarty->assign('isAdmin',$isAdmin);
+       $smarty->assign('isLogged',$isLogged);
+       $smarty->assign('idUsuario',$idUsuario);
        $smarty->display('templates/detalle.tpl');
       }
     }

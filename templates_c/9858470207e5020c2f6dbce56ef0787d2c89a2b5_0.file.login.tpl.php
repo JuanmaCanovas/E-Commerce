@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.40, created on 2021-10-15 03:18:37
+/* Smarty version 3.1.40, created on 2021-11-17 16:04:16
   from 'C:\xampp\htdocs\Repo\TpEspecialWeb2\templates\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.40',
-  'unifunc' => 'content_6168d6ed0078e3_51497670',
+  'unifunc' => 'content_619519f01acea4_79738144',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9858470207e5020c2f6dbce56ef0787d2c89a2b5' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Repo\\TpEspecialWeb2\\templates\\login.tpl',
-      1 => 1634240943,
+      1 => 1637161245,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6168d6ed0078e3_51497670 (Smarty_Internal_Template $_smarty_tpl) {
+function content_619519f01acea4_79738144 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
             <html lang="en">
             <head>
@@ -57,7 +57,7 @@ function content_6168d6ed0078e3_51497670 (Smarty_Internal_Template $_smarty_tpl)
                                 </div>
                                 <div class="py-4 text-center">
                                     <p class="fw-bold">O</p>
-                                    <a href="home">Continuar como invitado</a>
+                                    <a href="home">Continuar como invitado</a>/<a href="signUp">Registrarse</a>
                                 </div>
                             </form>
                         </div>

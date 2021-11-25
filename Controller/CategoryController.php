@@ -32,7 +32,7 @@
             session_start();
 
             if(isset($_SESSION['usuario'])){
-                $this->view->editarCategoria($id,$categories,$is_logged=$_SESSION['logged']);
+                $this->view->editarCategoria($id,$categories,$is_logged=$_SESSION['logged'],$is_admin['isAdmin']);
             }else{
                 $this->view->editarCategoria($id,$categories);
                  

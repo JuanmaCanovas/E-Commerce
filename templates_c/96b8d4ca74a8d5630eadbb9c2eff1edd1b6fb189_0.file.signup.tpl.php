@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 3.1.40, created on 2021-11-17 16:07:08
+  from 'C:\xampp\htdocs\Repo\TpEspecialWeb2\templates\signup.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.40',
+  'unifunc' => 'content_61951a9c341ab4_98649636',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '96b8d4ca74a8d5630eadbb9c2eff1edd1b6fb189' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\Repo\\TpEspecialWeb2\\templates\\signup.tpl',
+      1 => 1637161387,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_61951a9c341ab4_98649636 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
             <html lang="en">
             <head>
               <meta charset="UTF-8">
@@ -19,8 +42,8 @@
                             <div class="text-end logo">
                                 <img src="images/logo.png" width="100" alt="">
                             </div>
-                            <h3 class="fw-bold text-center py-5">Bienvenido!</h3>
-                            <form action="logging" method="POST">
+                            <h3 class="fw-bold text-center py-5">Cree su usuario</h3>
+                            <form action="sendSignUp" method="POST">
                                 <div class="mb-4">
                                     <label for="email" class="form-label">Email:</label>
                                     <input type="email" class="form-control" name="email" required>
@@ -30,11 +53,7 @@
                                     <input type="password" class="form-control" name="password" required>
                                 </div>
                                 <div class="d-grid">
-                                    <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
-                                </div>
-                                <div class="py-4 text-center">
-                                    <p class="fw-bold">O</p>
-                                    <a href="home">Continuar como invitado</a>/<a href="signUp">Registrarse</a>
+                                    <button type="submit" class="btn btn-primary">Registrarse</button>
                                 </div>
                             </form>
                         </div>
@@ -43,7 +62,12 @@
             
             
             
-              <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
-              <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+              <?php echo '<script'; ?>
+ src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"><?php echo '</script'; ?>
+>
+              <?php echo '<script'; ?>
+ src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"><?php echo '</script'; ?>
+>
             </body>
-            </html>
+            </html><?php }
+}

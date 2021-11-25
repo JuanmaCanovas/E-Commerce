@@ -49,7 +49,7 @@
         case 'deleteCategory':
             $categoryController->deleteCategory($params[1]); //Done
             break;
-        case 'viewProduct':
+        case 'showProduct':
             $productController->showProduct($params[1]);
             break;
         case 'viewLogin':
@@ -63,8 +63,26 @@
             session_start();
             session_destroy();
             break;
+        case 'signUp':
+            $loginController->goSignUp();
+            break;
+        case 'sendSignUp':
+            $loginController->createUser();
+            break;
+        case 'admin-panel':
+            $loginController->AdminPanel();
+            break;
         case 'logout':
             $loginController->logout();
+            break;
+        case 'deleteUser':
+            $loginController->deleteUser($params[1]);
+            break;
+        case 'promoteUser':
+            $loginController->promoteUser($params[1]);
+            break;
+        case 'demoteUser':
+            $loginController->demoteUser($params[1]);
             break;
         case 'logging':
             $loginController->verifyLogin();
