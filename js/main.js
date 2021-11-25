@@ -38,7 +38,7 @@ async function addComentario(e) {
 
 async function getComentarios() {
     let id_producto = document.querySelector("input[name=id-producto]").value;
-    let response = await fetch("../api/productos/" + id_producto);
+    let response = await fetch("./api/productos/" + id_producto);
     let comentarios = await response.json();
     app.comentarios = comentarios;
     app.getPromedio();
