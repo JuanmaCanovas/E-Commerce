@@ -29,7 +29,11 @@
            if(isset($_SESSION['usuario'])){
                $this->view->home($products, $categories,$is_logged=$_SESSION['logged'],$is_admin=$_SESSION['isAdmin']);
            }else{
-                $this->view->home($products, $categories);
+                $_SESSION['logged']=false;
+                $_SESSION['isAdmin']=false;
+                $_SESSION['usuario'] = '';
+                $_SESSION['id_usuario'] = '';
+                $this->view->home($products, $categories,$is_logged=$_SESSION['logged'],$id_admin=$_SESSION['isAdmin']);
            }
 
        }
@@ -59,7 +63,7 @@
            if(isset($_SESSION['usuario'])){
             $this->view->viewDetail($producto,$usuarios,$comments,$is_admin=$_SESSION['isAdmin'],$is_logged=$_SESSION['logged'],$usuario=$_SESSION['usuario'],$idUsuario=$_SESSION['id_usuario']);
            }else{
-               $this->view->viewDetail($producto,$usuarios,$comments,$is_admin=false,$is_logged=false,$usuario='',$idUsuario='');
+               $this->view->viewDetail($producto,$usuarios,$comments,$is_admin=$_SESSION['isAdmin'],$is_logged=$_SESSION['logged'],$usuario=$_SESSION['usuario'],$idUsuario=$_SESSION['id_usuario']);
                 
            }
        }

@@ -4,7 +4,7 @@
     
     {if (($isLogged==true)||($isAdmin==true))}
 
-    <form action="form-action"id="form-comentario">
+    <form action="form-action"id="form-comentario" class="container">
         <div class="form-group text-left">
             <label for="exampleFormControlSelect1">Puntuación</label>
             <select class="form-control" id="exampleFormControlSelect1" name="puntos">
@@ -14,6 +14,10 @@
                 <option>4</option>
                 <option>5</option>
             </select>
+        </div>
+        <div class="form-group text-left">
+        <label for="exampleFormControlTextarea1">Que te parece el producto</label>
+        <input type="text" class="form-control" id="exampleFormControlTextarea1" rows="3" name="comentario">
         </div>
             <input type="text" value="{$idUsuario}" name="id-usuario" hidden>
             <input type="text" value="{$usuario}" name="nombre"  hidden>

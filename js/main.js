@@ -2,9 +2,18 @@
 let app = new Vue({
     el: "#template-vue-comentarios",
     data: {
-        promedio: 0,
+    
         comentarios: [],
 
+    },
+    methods:{
+        eliminarComentario: async function eliminarComentario(id){
+            await fetch("./api/comentarios/"+id,
+           {method:"DELETE"}
+           );
+           getComentarios();
+        
+        }
     }
 });
 
@@ -15,20 +24,18 @@ if (comentar != null)
 async function addComentario(e) {
     e.preventDefault();
     let puntuacion = document.querySelector("select[name=puntos]").value;
-    let comentario = document.querySelector("input[name=comentario]").value;
+    let descripcion = document.querySelector("input[name=comentario]").value;
     let id_producto = document.querySelector("input[name=id-producto]").value;
     let id_usuario = document.querySelector("input[name=id-usuario]").value;
-    let nombre = document.querySelector("input[name=nombre]").value;
     let data = {
+        descripcion,
         puntuacion,
-        comentario,
         id_producto,
         id_usuario,
-        nombre
     }
     console.log(data);
 
-    await fetch('../api/productos', {
+    await fetch('./api/comentarios', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
@@ -38,11 +45,8 @@ async function addComentario(e) {
 
 async function getComentarios() {
     let id_producto = document.querySelector("input[name=id-producto]").value;
-    let response = await fetch("./api/productos/" + id_producto);
+    let response = await fetch("./api/comentarios/" + id_producto);
     let comentarios = await response.json();
     app.comentarios = comentarios;
-    app.getPromedio();
-    
 }
-    getComentarios();
-    app.getPromedio();
+  getComentarios();

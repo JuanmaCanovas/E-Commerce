@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.40, created on 2021-11-25 21:48:05
+/* Smarty version 3.1.40, created on 2021-11-27 03:33:39
   from 'C:\xampp\htdocs\TPespecial\TpEspecialWeb2\templates\detalle.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.40',
-  'unifunc' => 'content_619ff685e229a3_66227704',
+  'unifunc' => 'content_61a19903c40431_27857241',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6feef0433daa4038c00ebc1ecfba5c07f5399d32' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPespecial\\TpEspecialWeb2\\templates\\detalle.tpl',
-      1 => 1637873283,
+      1 => 1637967415,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_619ff685e229a3_66227704 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61a19903c40431_27857241 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div id="producto">
@@ -51,9 +51,7 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
     </div>
 </div>
     <div class="container_form container">
-        <div class="form-group text-left">
-        <label for="exampleFormControlTextarea1">Que te parece el producto</label>
-        <input type="text" class="form-control" id="exampleFormControlTextarea1" rows="3" name="comentario">
+        
         <?php $_smarty_tpl->_subTemplateRender("file:addcomentario.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
         

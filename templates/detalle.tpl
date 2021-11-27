@@ -19,9 +19,7 @@
     </div>
 </div>
     <div class="container_form container">
-        <div class="form-group text-left">
-        <label for="exampleFormControlTextarea1">Que te parece el producto</label>
-        <input type="text" class="form-control" id="exampleFormControlTextarea1" rows="3" name="comentario">
+        
         {include file="addcomentario.tpl"}
         
         </div>
