@@ -7,14 +7,16 @@ let app = new Vue({
 
     },
     methods:{
-        eliminarComentario: async function eliminarComentario(id){
-            await fetch("./api/comentarios/"+id,
-           {method:"DELETE"}
-           );
-           getComentarios();
-        
+        eliminarComentario: async function (id){
+            let url = './api/comentarios/' + id;
+            await fetch(url,
+            {method: 'DELETE'
+            })
+            .then(function(){
+                getComentarios();
+            });
         }
-    }
+    }  
 });
 
 let comentar = document.querySelector("#btn-comment");

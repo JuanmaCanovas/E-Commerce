@@ -16,7 +16,7 @@
         function getCommentDB($id){
             $sentencia=$this->db->prepare("SELECT * from comentarios WHERE id=?");
             $sentencia->execute(array($id));
-            $comment = fetch(PDO::FETCH_ASSOC);
+            $comment = $sentencia->fetch(PDO::FETCH_ASSOC);
             return $comment;
         }
 
