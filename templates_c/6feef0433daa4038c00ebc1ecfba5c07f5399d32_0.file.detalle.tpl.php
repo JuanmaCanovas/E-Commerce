@@ -1,30 +1,30 @@
 <?php
-/* Smarty version 3.1.40, created on 2021-11-29 17:38:10
+/* Smarty version 3.1.40, created on 2021-11-29 18:27:38
   from 'C:\xampp\htdocs\TPespecial\TpEspecialWeb2\templates\detalle.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.40',
-  'unifunc' => 'content_61a501f29b9f92_21350398',
+  'unifunc' => 'content_61a50d8aa41d41_03411347',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6feef0433daa4038c00ebc1ecfba5c07f5399d32' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPespecial\\TpEspecialWeb2\\templates\\detalle.tpl',
-      1 => 1638173711,
+      1 => 1638206849,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
-    'file:header.tpl' => 1,
+    'file:headerdetail.tpl' => 1,
     'file:addcomentario.tpl' => 1,
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_61a501f29b9f92_21350398 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+function content_61a50d8aa41d41_03411347 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:headerdetail.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div id="producto">
     <div class="container p-5">
