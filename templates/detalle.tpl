@@ -20,8 +20,7 @@
 </div>
 
     <div class="container_form container">
-    <input type="text" value="{$producto['id_product']}" name="id-producto" hidden>
-        
+        <input type="text" value="{$producto['id_product']}" name="id-producto" hidden>
         {include file="addcomentario.tpl"}
         
         </div>

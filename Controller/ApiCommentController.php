@@ -17,11 +17,19 @@
         function getComments($params = null){
             $idProduct = $params[":ID"];
             if ($idProduct){
-                $orderby = "puntuacion";
-                if(isset($_GET["orderby"])){
-                    $orderby = $_GET["orderby"];
-                }
-                $comments =$this->model->getCommentsDB($idProduct, $orderby = $orderby);
+                $order = "DESC";
+                $comments =$this->model->getCommentsDB($idProduct, $order = $order);
+
+                return $this->view->response($comments, 200);
+            }else{
+                return $this->view->response("No existen comentarios", 404);
+            }
+        }
+        function getCommentsOrder($params = null){
+            $idProduct = $params[":ID"];
+            $order = $params[":ATTR"];
+            if ($idProduct){
+                $comments =$this->model->getCommentsDB($idProduct, $order = $order);
 
                 return $this->view->response($comments, 200);
             }else{

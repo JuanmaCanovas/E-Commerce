@@ -24,8 +24,9 @@
         function createUser(){
 
             if ((isset($_POST['email']))&&(isset($_POST['password']))){
-
                 $email = $_POST['email'];
+                $emailDB = $this->model->getUserId($email);
+                if (!$emailDB){
                 $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
                 $this->model->signupUser($email, $password);
                 $id_usuario=$this->model->getUserId($email);
@@ -38,7 +39,10 @@
                     $_SESSION['id_usuario'] = $id_usuario[0]['id_usuario'];
                     header(home);
                 }
-
+                }else{
+                    $this->view->showSignUp();
+                    echo '<h3 class="text-danger text-center">Ese Email ya esta registrado</h3>';
+                }
             }
 
         }

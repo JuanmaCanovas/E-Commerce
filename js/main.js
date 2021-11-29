@@ -17,6 +17,18 @@ let app = new Vue({
             .then(function(){
                 getComentarios();
             });
+        },
+        ordenarAscendente: async function (){
+            let id_producto = document.querySelector("input[name=id-producto]").value;
+            let response = await fetch('./api/comentarios/' + id_producto + '/ASC');
+            let comentarios = await response.json();
+            app.comentarios = comentarios;
+        },
+        ordenarDescendente: async function (){
+            let id_producto = document.querySelector("input[name=id-producto]").value;
+            let response = await fetch('./api/comentarios/' + id_producto + '/DESC');
+            let comentarios = await response.json();
+            app.comentarios = comentarios;
         }
     }  
 });

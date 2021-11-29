@@ -10,9 +10,10 @@
 
     //Tabla de ruteo
     $router->addRoute('/comentarios/:ID', 'GET', 'ApiCommentController', 'getComments');
+    $router->addRoute('/comentarios/:ID/:ATTR', 'GET', 'ApiCommentController', 'getCommentsOrder');
     $router->addRoute('/comentarios/:ID', 'DELETE', 'ApiCommentController', 'deleteComment');
     $router->addRoute('/comentarios', 'POST', 'ApiCommentController', 'addComment');
-    $router->addRoute('/comentarios/:ID/:ATTR', 'GET', 'ApiProductosController', 'getAttr');
+    //$router->addRoute('/comentarios/:ID/:ATTR', 'GET', 'ApiProductosController', 'getAttr');
 
     //routea
     $router->route($_GET["resource"], $_SERVER['REQUEST_METHOD']);
