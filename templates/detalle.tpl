@@ -20,6 +20,19 @@
 </div>
 
     <div class="container_form container">
+    <form method="GET">
+        <!--<select name="orderby" id="orderby">
+            <option value="puntuacion">puntuacion</option>
+            <option value="antiguedad">antiguedad</option>
+        </select>
+        <select name="asc" id="asc">
+            <option value="ascendente">ascendente</option>
+            <option value="descendente">descendente</option>
+        </select> -->
+        <input type="text" name="orderby" placeholder="id/puntuacion">
+        <!--<input type="text" name="asc" placeholder="ascendente/descendente">-->
+        <input type="submit" value="ordenar">
+    </form>
     <input type="text" value="{$producto['id_product']}" name="id-producto" hidden>
         
         {include file="addcomentario.tpl"}

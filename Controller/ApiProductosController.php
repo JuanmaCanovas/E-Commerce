@@ -14,14 +14,15 @@ function __construct(){
     $this->model = new ProductModel();
 }
 
-    private $attrs = [
-        "id" => "id",
-        "puntuacion" => "puntuacion",
-    ];
+    
 
     function getAttr($params){
         $idProduct = $params[":ID"];
         $attr = $params[":ATTR"];
+        $attrs = [
+            "id" => "id",
+            "puntuacion" => "puntuacion",
+        ];
         if(isset($attrs[$attr]) && $this->model->getProduct($idProduct)){
             $attr = $attrs[$attr];
             $value = $this->model->getAttr($idProduct, $attr);
