@@ -18,6 +18,7 @@
             $this->commentModel = new CommentModel;
 
        }
+
        function showHome(){
 
            $products = $this->model->getProducts();
@@ -57,7 +58,7 @@
        function showProduct($id){
            $producto = $this->model->getProduct($id);
            $producto['id_categoria'] = $this->model->getCategoryName($producto['id_categoria']);
-           $comments = $this->commentModel->getCommentsDB($id);
+           $comments = $this->commentModel->getCommentsDB($id, null);
            $usuarios = $this->loginModel->getUsers();
            session_start();
            if(isset($_SESSION['usuario'])){

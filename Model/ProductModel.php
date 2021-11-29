@@ -72,4 +72,10 @@
             return $categories;
         }
 
+
+        function getAttr($id_producto, $attr){
+            $sentencia = $this->db->prepare("SELECT $attr from comentarios WHERE id_producto = ?");
+            $sentencia-> execute(array($id_producto));
+            return $sentencia->fetchColumn();
+        }
     }

@@ -1,4 +1,6 @@
 "use strict"
+
+
 let app = new Vue({
     el: "#template-vue-comentarios",
     data: {
@@ -8,8 +10,7 @@ let app = new Vue({
     },
     methods:{
         eliminarComentario: async function (id){
-            let url = './api/comentarios/' + id;
-            await fetch(url,
+            await fetch('./api/comentarios/' + id,
             {method: 'DELETE'
             })
             .then(function(){
@@ -37,7 +38,7 @@ async function addComentario(e) {
     }
     console.log(data);
 
-    await fetch('./api/comentarios', {
+    await fetch('./api/comentarios/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
@@ -47,8 +48,9 @@ async function addComentario(e) {
 
 async function getComentarios() {
     let id_producto = document.querySelector("input[name=id-producto]").value;
-    let response = await fetch("./api/comentarios/" + id_producto);
+    let response = await fetch('./api/comentarios/' + id_producto);
     let comentarios = await response.json();
     app.comentarios = comentarios;
 }
-  getComentarios();
+
+getComentarios();

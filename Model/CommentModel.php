@@ -7,8 +7,25 @@
             $this->db = new PDO('mysql:host=localhost;'.'dbname=db_pcmarket;charset=utf8', 'root', '');
         }
 
-        function getCommentsDB($id){
-            $sentencia=$this->db->prepare("SELECT * from comentarios WHERE id_producto=?");
+        function getCommentsDB($id, $orderBy, $asc = false){
+            
+            $sentencias=[
+                "id" => "ORDER BY id",
+                "puntuacion" => "ORDER BY puntuacion",
+            ];
+            if(isset($sentencias[$orderBy])){   
+                $orderQuery = $sentencias[$orderBy];
+                /*if($asc){
+                    $orderQuery += "ASC";
+                }
+                else{
+                    $orderQuery += "DESC";
+                    }*/
+                }
+            else    
+                $orderQuery = "";
+
+            $sentencia=$this->db->prepare("SELECT * from comentarios WHERE id_producto=? ORDER BY puntuacion ASC");
             $sentencia->execute(array($id));
             return $sentencia->fetchAll(PDO::FETCH_ASSOC);
         }

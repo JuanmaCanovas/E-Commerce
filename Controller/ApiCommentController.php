@@ -13,10 +13,17 @@
             $this->view= new ApiCommentView();
         }
 
+
         function getComments($params = null){
             $idProduct = $params[":ID"];
-            $comments = $this->model->getCommentsDB($idProduct);
-            if ($comments){
+            //$comments = $this->model->getCommentsDB($idProduct);
+            if ($idProduct){
+                $orderby = "puntuacion";
+                if(isset($_GET["orderby"])){
+                    $orderby = $_GET["orderby"];
+                }
+                $comments = $this->model->getCommentsDB($idProduct, $orderby);
+
                 return $this->view->response($comments, 200);
             }else{
                 return $this->view->response("No existen comentarios", 404);
