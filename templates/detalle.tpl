@@ -1,4 +1,4 @@
-{include file="header.tpl"}
+{include file="headerdetail.tpl"}
 <div id="producto">
     <div class="container p-5">
         <div class="card text-center d-flex shadow mt-5">
