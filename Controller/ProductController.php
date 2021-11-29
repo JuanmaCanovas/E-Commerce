@@ -58,7 +58,7 @@
        function showProduct($id){
            $producto = $this->model->getProduct($id);
            $producto['id_categoria'] = $this->model->getCategoryName($producto['id_categoria']);
-           $comments = $this->commentModel->getCommentsDB($id, null);
+           $comments = $this->commentModel->getCommentsDB($id, $orderby = 'puntuacion');
            $usuarios = $this->loginModel->getUsers();
            session_start();
            if(isset($_SESSION['usuario'])){

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.40, created on 2021-11-29 09:47:41
+/* Smarty version 3.1.40, created on 2021-11-29 17:38:10
   from 'C:\xampp\htdocs\TPespecial\TpEspecialWeb2\templates\addcomentario.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.40',
-  'unifunc' => 'content_61a493ada444d0_94697441',
+  'unifunc' => 'content_61a501f29ce231_21511804',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:vue/comentarios.tpl' => 1,
   ),
 ),false)) {
-function content_61a493ada444d0_94697441 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61a501f29ce231_21511804 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="col-lg-12">
 

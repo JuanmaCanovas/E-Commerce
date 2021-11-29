@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.40, created on 2021-11-29 09:46:20
+/* Smarty version 3.1.40, created on 2021-11-29 17:36:41
   from 'C:\xampp\htdocs\TPespecial\TpEspecialWeb2\templates\producto.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.40',
-  'unifunc' => 'content_61a4935ce2fb05_21254074',
+  'unifunc' => 'content_61a50199380800_25015300',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2cbc9f38ad8f33d0a47659c1734521ef9d73b3f0' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPespecial\\TpEspecialWeb2\\templates\\producto.tpl',
-      1 => 1638152364,
+      1 => 1638202202,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61a4935ce2fb05_21254074 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61a50199380800_25015300 (Smarty_Internal_Template $_smarty_tpl) {
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['products']->value, 'product');
 $_smarty_tpl->tpl_vars['product']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['product']->value) {
@@ -38,7 +38,7 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
 </h5>
                     <h6 class="card-title text-info">Categoria: <?php echo $_smarty_tpl->tpl_vars['product']->value['id_categoria'];?>
 </h6>
-                    <h6 class="card-title text-info">Puntuación: <?php echo $_smarty_tpl->tpl_vars['product']->value['id_categoria'];?>
+                    <h6 class="card-title text-info">Puntuación: <?php echo $_smarty_tpl->tpl_vars['product']->value['puntuacion'];?>
 </h6>
                     <a href="showProduct/<?php echo $_smarty_tpl->tpl_vars['product']->value['id_product'];?>
 " class="btn btn-primary">Ver Detalle</a>

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.40, created on 2021-11-29 09:46:20
+/* Smarty version 3.1.40, created on 2021-11-29 17:38:10
   from 'C:\xampp\htdocs\TPespecial\TpEspecialWeb2\templates\detalle.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.40',
-  'unifunc' => 'content_61a4935c213414_67357331',
+  'unifunc' => 'content_61a501f29b9f92_21350398',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_61a4935c213414_67357331 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61a501f29b9f92_21350398 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div id="producto">

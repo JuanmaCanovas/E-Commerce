@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.40, created on 2021-11-29 09:46:20
+/* Smarty version 3.1.40, created on 2021-11-29 17:36:41
   from 'C:\xampp\htdocs\TPespecial\TpEspecialWeb2\templates\form.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.40',
-  'unifunc' => 'content_61a4935ce38432_71838925',
+  'unifunc' => 'content_61a50199389037_18574495',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61a4935ce38432_71838925 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61a50199389037_18574495 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['isLogged']->value) {?>
   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Agregar producto</button>
   <button type="button" class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#exampleModal2" data-bs-whatever="@mdo">Agregar categoria</button>
