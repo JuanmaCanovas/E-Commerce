@@ -9,7 +9,6 @@
     $router = new Router();
 
     //Tabla de ruteo
-    //$router->addRoute('productos/:ID', 'GET', 'ApiProductController', 'viewProduct');
     $router->addRoute('/comentarios/:ID', 'GET', 'ApiCommentController', 'getComments');
     $router->addRoute('/comentarios/:ID', 'DELETE', 'ApiCommentController', 'deleteComment');
     $router->addRoute('/comentarios', 'POST', 'ApiCommentController', 'addComment');

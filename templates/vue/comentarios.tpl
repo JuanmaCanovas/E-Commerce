@@ -1,11 +1,11 @@
 
 {literal}  
-
 <div id="template-vue-comentarios">
       <div >
           <article v-for="comentario in comentarios" class="text-left">
             <div v-if="comentario.descripcion">
               <div class="card" style="width: 18rem;">
+              
                   <div class="card-body">
                   <h5 class="card-title">Puntaje: {{comentario.puntuacion}}</h5>
                   <p class="card-text">{{comentario.descripcion}}</p>

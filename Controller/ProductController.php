@@ -64,8 +64,7 @@
            if(isset($_SESSION['usuario'])){
             $this->view->viewDetail($producto,$usuarios,$comments,$is_admin=$_SESSION['isAdmin'],$is_logged=$_SESSION['logged'],$usuario=$_SESSION['usuario'],$idUsuario=$_SESSION['id_usuario']);
            }else{
-               $this->view->viewDetail($producto,$usuarios,$comments,$is_admin=$_SESSION['isAdmin'],$is_logged=$_SESSION['logged'],$usuario=$_SESSION['usuario'],$idUsuario=$_SESSION['id_usuario']);
-                
+            $this->view->viewDetail($producto,$usuarios,$comments,$is_admin=$_SESSION['isAdmin'],$is_logged=$_SESSION['logged'],$usuario=$_SESSION['usuario'],$idUsuario=$_SESSION['id_usuario']);        
            }
        }
 

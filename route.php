@@ -78,6 +78,11 @@
         case 'deleteUser':
             $loginController->deleteUser($params[1]);
             break;
+        case 'guest':
+            $loginController->guest();
+            //session_start();
+            //session_destroy();
+            break;
         case 'promoteUser':
             $loginController->promoteUser($params[1]);
             break;

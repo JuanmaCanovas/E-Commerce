@@ -78,6 +78,16 @@
             }
         }
 
+        function guest(){
+
+            session_start();
+            $_SESSION['isAdmin'] = false;
+            $_SESSION['logged'] = false;
+            $_SESSION['usuario'] = null;
+            $_SESSION['id_usuario'] = null;
+            header(home);
+
+        }
 
         function AdminPanel(){
             session_start();
@@ -87,6 +97,8 @@
                 
             }
         }
+
+
 
         function promoteUser($id_usuario){
             session_start();
